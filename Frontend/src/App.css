@@ -1,0 +1,359 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 1px 1px, #e5e7eb 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: linear-gradient(90deg, #0d1f2d, #0f3347, #155e6e);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  color: #e0f7fa;
+  text-shadow: 0 0 10px rgba(160, 230, 240, 0.5);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-right {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-right button {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #e8f8fb;
+  padding: 8px 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  font-size: 13.5px;
+}
+
+.nav-right button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= CARD DESIGN ================= */
+
+.booking-container,
+.travel-form,
+.generated-plan {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-top: 30px;
+  width: 95%;
+  max-width: 900px;
+  transition: 0.3s ease;
+}
+
+.booking-container:hover,
+.travel-form:hover,
+.generated-plan:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= TITLES ================= */
+
+.booking-title,
+.generated-plan h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #0f3347;
+}
+
+/* ================= FORM ROW ================= */
+
+.form-row,
+.booking-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.form-row input,
+.booking-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: 0.3s ease;
+}
+
+.form-row input:focus,
+.booking-row input:focus {
+  outline: none;
+  border-color: #155e6e;
+  box-shadow: 0 0 6px rgba(21, 94, 110, 0.35);
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #0f3347, #155e6e);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(15, 51, 71, 0.4);
+}
+
+/* ================= RESULTS CARDS ================= */
+
+.airport-item,
+.flight-card,
+.result-card {
+  background: #f0fafc;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
+  border: 1px solid #c8edf2;
+}
+
+.airport-item:hover,
+.flight-card:hover,
+.result-card:hover {
+  background: #d6f2f7;
+  transform: scale(1.02);
+}
+
+/* ================= SCROLLABLE AREA ================= */
+
+.fixed-scroll {
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.fixed-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.fixed-scroll::-webkit-scrollbar-thumb {
+  background: #7dd4de;
+  border-radius: 10px;
+}
+
+/* ================= TRAVEL HISTORY LIST ================= */
+
+.generated-plan div {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.generated-plan div:hover {
+  background: #d6f2f7;
+}
+
+/* ================= CHAT SECTION ================= */
+
+.generated-plan input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 70%;
+  margin-right: 10px;
+}
+
+/* ================= AUTH PAGE ================= */
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ================= HOME HERO SECTION ================= */
+
+.home-hero {
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: url("/travelbg-4.jpeg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title {
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  margin-top: 90px;
+  text-align: center;
+}
+
+.center-box {
+  width: 280px;
+  height: 280px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  /* margin-top: 60px; */
+}
+
+.center-box:hover {
+  transform: translateY(-5px);
+}
+
+.home-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.home-btn {
+  width: 80%;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* ================= LIGHT CLERK PROFILE THEME ================= */
+
+/* Sidebar background – very light */
+.cl-navbar,
+.cl-navbarMobileMenuButton {
+  background-color: #f6fbfd !important;
+}
+
+/* Sidebar text */
+.cl-navbarButton {
+  color: #c2dceb !important;
+  font-weight: 500 !important;
+}
+
+/* Active sidebar item – light teal */
+.cl-navbarButton:hover,
+.cl-navbarButton[aria-current="page"],
+.cl-navbarButton--active {
+  background-color: #e0f2f7 !important;
+  color: #b0d2e4 !important;
+  border-radius: 8px !important;
+}
+
+/* Primary button (Update profile) – LIGHT */
+.cl-formButtonPrimary {
+  background: #e0f2f7 !important;
+  color: #aacee1 !important;
+  border: 1px solid #cfeaf0 !important;
+  font-weight: 600 !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background: #cfeaf0 !important;
+}
+
+/* Add email / Connect account rows */
+.cl-actionCard,
+.cl-profileSectionPrimaryButton {
+  background-color: #f0f9fb !important;
+  color: #aed0e2 !important;
+  border: 1px solid #cfeaf0 !important;
+  font-weight: 500 !important;
+}
+
+.cl-actionCard:hover,
+.cl-profileSectionPrimaryButton:hover {
+  background-color: #e0f2f7 !important;
+}
+
+/* Primary badge */
+.cl-badge {
+  background-color: #e0f2f7 !important;
+  color: #adcad9 !important;
+  border: 1px solid #cfeaf0 !important;
+  font-weight: 600 !important;
+}
+
+/* Dots menu */
+.cl-menuButton {
+  color: #c5deec !important;
+  background-color: #f0f9fb !important;
+}
+
+.cl-menuButton:hover {
+  background-color: #e0f2f7 !important;
+}
+
+/* Close button */
+.cl-modalCloseButton {
+  background-color: #f0f9fb !important;
+  color: #cde0eb !important;
+  border-radius: 8px !important;
+}
+
+.cl-modalCloseButton:hover {
+  background-color: #e0f2f7 !important;
+}
+
+/* Section dividers */
+.cl-profileSection {
+  border-color: #e6f4f8 !important;
+}

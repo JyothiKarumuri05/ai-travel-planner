@@ -1,0 +1,22 @@
+# Node
+node_modules/
+
+# Env files
+.env
+
+# Database
+*.db
+
+# Python
+__pycache__/
+*.pyc
+
+# PDFs
+generated_pdfs/
+
+# Logs
+logs
+*.log
+
+# OS files
+.DS_Store
