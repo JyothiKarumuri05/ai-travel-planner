@@ -1,5 +1,5 @@
-const bookingRoutes = require('./routes/bookingRoutes');
 const express = require("express");
+const bookingRoutes = require('./routes/bookingRoutes');
 const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
 const { spawn } = require("child_process");
@@ -9,6 +9,7 @@ const app = express();
 const PORT = 5000;
 
 app.use(cors());
+app.use(express.json());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
@@ -16,7 +17,6 @@ app.use((req, res, next) => {
   next();
 }); 
 
-app.use(express.json());
 app.use('/api', bookingRoutes);
 app.use("/generated_pdfs", express.static("generated_pdfs"));
 
