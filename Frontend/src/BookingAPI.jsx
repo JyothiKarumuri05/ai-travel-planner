@@ -99,7 +99,7 @@ function BookingAPI() {
       setHasFlightSearched(true);
 
       const res = await fetch(
-        "http://ai-travel-planner-production-43c1.up.railway.app/api/flight-availability",
+        "https://ai-travel-planner-production-43c1.up.railway.app/api/flight-availability",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
