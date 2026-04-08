@@ -14,7 +14,7 @@ function HotelSearch() {
       setLoading(true);
       setHasSearched(true);
       const res = await fetch(
-        "http://localhost:5000/api/hotels-by-city-name",
+        "http://ai-travel-planner-production-43c1.up.railway.app/api/hotels-by-city-name",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
