@@ -19,7 +19,7 @@ app.use("/generated_pdfs", express.static("generated_pdfs"));
 //   else console.log("✅ Connected to SQLite database");
 // });
 
-const path = require("path");
+//const path = require("path");
 
 const dbPath = process.env.NODE_ENV === "production"
   ? "/app/data/travel_storing.db"
