@@ -9,14 +9,16 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"]
+}));
+
+app.options("*", cors());  
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "*");
-  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  next();
-}); 
+ 
 
 app.use('/api', bookingRoutes);
 app.use("/generated_pdfs", express.static("generated_pdfs"));
@@ -29,7 +31,7 @@ app.use("/generated_pdfs", express.static("generated_pdfs"));
 
 const dbPath = process.env.NODE_ENV === "production"
   ? "/app/data/travel_storing.db"
-  : path.join(__dirname, "travel.db");
+  : path.join(__dirname, "travel_storing.db");
 
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) console.error("DB Error:", err.message);
