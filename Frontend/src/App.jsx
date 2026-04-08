@@ -213,7 +213,7 @@ function TravelForm() {
     setLoading(true);
 
     try {
-      await fetch("http://localhost:5000/sync-user", {
+      await fetch("http://ai-travel-planner-production-43c1.up.railway.app/sync-user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -223,7 +223,7 @@ function TravelForm() {
         })
       });
 
-      const response = await fetch("http://localhost:5000/save-travel", {
+      const response = await fetch("http://ai-travel-planner-production-43c1.up.railway.app/save-travel", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -250,7 +250,7 @@ function TravelForm() {
   const handleChatSend = async () => {
     if (!requestId || !chatMessage.trim()) return;
 
-    const response = await fetch("http://localhost:5000/chat", {
+    const response = await fetch("http://ai-travel-planner-production-43c1.up.railway.app/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -330,7 +330,7 @@ function TravelHistory() {
   useEffect(() => {
     if (!user) return;
 
-    fetch(`http://localhost:5000/travel-history/${user.id}`)
+    fetch(`http://ai-travel-planner-production-43c1.up.railway.app/travel-history/${user.id}`)
       .then(res => res.json())
       .then(data => setHistory(data));
   }, [user]);
@@ -344,7 +344,7 @@ function TravelHistory() {
         <button
           onClick={() =>
             window.open(
-              `http://localhost:5000/download-pdf/${selectedPlan.request_id}`,
+              `http://ai-travel-planner-production-43c1.up.railway.app/download-pdf/${selectedPlan.request_id}`,
               "_blank"
             )
           }
