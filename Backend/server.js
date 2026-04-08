@@ -14,7 +14,7 @@ app.use('/api', bookingRoutes);
 app.use("/generated_pdfs", express.static("generated_pdfs"));
 
 
-const db = new sqlite3.Database("./travel.db", (err) => {
+const db = new sqlite3.Database("/app/data/travel_storing.db", (err) => {
   if (err) console.error("DB Error:", err.message);
   else console.log("✅ Connected to SQLite database");
 });
