@@ -14,7 +14,7 @@ function HotelSearch() {
       setLoading(true);
       setHasSearched(true);
       const res = await fetch(
-        "http://maglev.proxy.rlwy.net:35138/api/hotels-by-city-name",
+        "https://antonina-teetotal-celena.ngrok-free.dev/api/hotels-by-city-name",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

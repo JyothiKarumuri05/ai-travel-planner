@@ -213,7 +213,7 @@ function TravelForm() {
     setLoading(true);
 
     try {
-      await fetch("http://maglev.proxy.rlwy.net:35138/sync-user", {
+      await fetch("https://antonina-teetotal-celena.ngrok-free.dev/sync-user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -223,7 +223,7 @@ function TravelForm() {
         })
       });
 
-      const response = await fetch("http://maglev.proxy.rlwy.net:35138/save-travel", {
+      const response = await fetch("https://antonina-teetotal-celena.ngrok-free.dev/save-travel", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -250,7 +250,7 @@ function TravelForm() {
   const handleChatSend = async () => {
     if (!requestId || !chatMessage.trim()) return;
 
-    const response = await fetch("http://maglev.proxy.rlwy.net:35138/chat", {
+    const response = await fetch("https://antonina-teetotal-celena.ngrok-free.dev/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -330,7 +330,7 @@ function TravelHistory() {
   useEffect(() => {
     if (!user) return;
 
-    fetch(`http://maglev.proxy.rlwy.net:35138/travel-history/${user.id}`)
+    fetch(`https://antonina-teetotal-celena.ngrok-free.dev/travel-history/${user.id}`)
       .then(res => res.json())
       .then(data => setHistory(data));
   }, [user]);
@@ -344,7 +344,7 @@ function TravelHistory() {
         <button
           onClick={() =>
             window.open(
-              `http://maglev.proxy.rlwy.net:35138/download-pdf/${selectedPlan.request_id}`,
+              `https://antonina-teetotal-celena.ngrok-free.dev/download-pdf/${selectedPlan.request_id}`,
               "_blank"
             )
           }

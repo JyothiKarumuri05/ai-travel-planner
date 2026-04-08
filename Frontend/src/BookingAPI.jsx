@@ -1,6 +1,3 @@
-
-
-
 import { useState } from "react";
 import airports from "./data/airports.json";
 import "./BookingAPI.css";
@@ -99,7 +96,7 @@ function BookingAPI() {
       setHasFlightSearched(true);
 
       const res = await fetch(
-        "http://maglev.proxy.rlwy.net:35138/api/flight-availability",
+        "https://antonina-teetotal-celena.ngrok-free.dev/api/flight-availability",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
