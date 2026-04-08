@@ -213,7 +213,7 @@ function TravelForm() {
     setLoading(true);
 
     try {
-      await fetch("https://ai-travel-planner-production-43c1.up.railway.app/sync-user", {
+      await fetch("http://maglev.proxy.rlwy.net:35138/sync-user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -223,7 +223,7 @@ function TravelForm() {
         })
       });
 
-      const response = await fetch("https://ai-travel-planner-production-43c1.up.railway.app/save-travel", {
+      const response = await fetch("http://maglev.proxy.rlwy.net:35138/save-travel", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -250,7 +250,7 @@ function TravelForm() {
   const handleChatSend = async () => {
     if (!requestId || !chatMessage.trim()) return;
 
-    const response = await fetch("https://ai-travel-planner-production-43c1.up.railway.app/chat", {
+    const response = await fetch("http://maglev.proxy.rlwy.net:35138/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -330,7 +330,7 @@ function TravelHistory() {
   useEffect(() => {
     if (!user) return;
 
-    fetch(`https://ai-travel-planner-production-43c1.up.railway.app/travel-history/${user.id}`)
+    fetch(`http://maglev.proxy.rlwy.net:35138/travel-history/${user.id}`)
       .then(res => res.json())
       .then(data => setHistory(data));
   }, [user]);
@@ -344,7 +344,7 @@ function TravelHistory() {
         <button
           onClick={() =>
             window.open(
-              `https://ai-travel-planner-production-43c1.up.railway.app/download-pdf/${selectedPlan.request_id}`,
+              `http://maglev.proxy.rlwy.net:35138/download-pdf/${selectedPlan.request_id}`,
               "_blank"
             )
           }
